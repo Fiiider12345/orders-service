@@ -49,7 +49,7 @@ public class OrderService {
 
 		for (Order order : list) {
 			if (order.getId() == id) {
-				if (order.getState() == State.WAITING || order.getState() == State.FINISHED) {
+				if (order.getState() == State.WAITING || order.getState() == State.PICKED_UP) {
 					orderDaoImpl.delete(id);
 				} else {
 					System.out.println("Can not delete order in preparation!");
